@@ -225,6 +225,12 @@ See `lora_test.go` for complete examples including:
 - Error handling
 - Raw AT commands
 
+## Further Reading
+
+- [RYLR40x/RYLR89x AT Command Documentation](https://reyax.com/upload/products_download/download_file/LoRa-AT-Command-RYLR40x_RYLR89x_EN-8.pdf) - Official AT command reference
+- [Understanding LoRa Parameters](https://unsigned.io/understanding-lora-parameters/) - Guide to spreading factor, bandwidth, and coding rate
+
+
 ## License
 
 MIT License - See LICENSE.txt
