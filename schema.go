@@ -32,7 +32,7 @@ type Configuration struct {
 	Band          *uint32     // BAND(Hz), 		433000000-915000000,												center freq of wireless band
 	Parameter     *Parameters // PARAMETER, 																		rf params
 	Mode          *uint8      // MODE, 			0-1,																work mode
-	UartBaudRate  *uint32     // IPR, 			300-115200, 														uart baud rate
+	UartBaudRate  *int        // IPR, 			300-115200, 														uart baud rate
 	EncryptionKey *[16]byte   // CPIN, 			00000000000000000000000000000000-FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF,	AES128 network password
 	RFOutputPower *uint8      // CRFOP(dBm),	0-15,																RF output power
 

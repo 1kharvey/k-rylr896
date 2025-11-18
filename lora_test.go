@@ -40,7 +40,7 @@ func TestLoRaConnection(t *testing.T) {
 
 	// create connection
 	// the callback allows users to set their own logging mechanism
-	lora, err := CreateConnectionDEBUG(testSerialPort, config, 10, "r1", func(name, msg string) {
+	lora, err := CreateConnectionDEBUG(testSerialPort, UartBaudRate_115200, config, 10, "r1", func(name, msg string) {
 		log.Printf("[DEBUG][%s] %s", name, msg)
 	})
 	if err != nil {
@@ -56,7 +56,7 @@ func TestLoRaSendMessage(t *testing.T) {
 	// minimal configuration
 	config := Configuration{}
 
-	lora, err := CreateConnectionDEBUG(testSerialPort, config, 10, "TestLoRaSendMessage", func(name, msg string) {
+	lora, err := CreateConnectionDEBUG(testSerialPort, UartBaudRate_115200, config, 10, "TestLoRaSendMessage", func(name, msg string) {
 		log.Printf("[DEBUG][%s] %s", name, msg)
 	})
 	if err != nil {
@@ -78,7 +78,7 @@ func TestLoRaReceiveMessage(t *testing.T) {
 	config := Configuration{}
 
 	// create connection
-	lora, err := CreateConnectionDEBUG(testSerialPort, config, 10, "r1", func(name, msg string) {
+	lora, err := CreateConnectionDEBUG(testSerialPort, UartBaudRate_115200, config, 10, "r1", func(name, msg string) {
 		log.Printf("[DEBUG][%s] %s", name, msg)
 	})
 	if err != nil {
@@ -123,7 +123,7 @@ func TestLoRaRawCommand(t *testing.T) {
 	config := Configuration{}
 
 	// create connection
-	lora, err := CreateConnectionDEBUG(testSerialPort, config, 10, "r1", func(name, msg string) {
+	lora, err := CreateConnectionDEBUG(testSerialPort, UartBaudRate_115200, config, 10, "r1", func(name, msg string) {
 		log.Printf("[DEBUG][%s] %s", name, msg)
 	})
 	if err != nil {
@@ -165,7 +165,7 @@ func Example_basicUsage() {
 	}
 
 	// create connection
-	lora, err := CreateConnectionDEBUG(testSerialPort, config, 10, "r1", func(name, msg string) {
+	lora, err := CreateConnectionDEBUG(testSerialPort, UartBaudRate_115200, config, 10, "r1", func(name, msg string) {
 		log.Printf("[DEBUG][%s] %s", name, msg)
 	})
 	if err != nil {

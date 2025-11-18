@@ -36,14 +36,14 @@ const (
 
 // UART baud rate constants
 const (
-	UartBaudRate_300    uint32 = 300
-	UartBaudRate_1200   uint32 = 1200
-	UartBaudRate_4800   uint32 = 4800
-	UartBaudRate_9600   uint32 = 9600
-	UartBaudRate_28800  uint32 = 19200
-	UartBaudRate_38400  uint32 = 38400
-	UartBaudRate_57600  uint32 = 57600
-	UartBaudRate_115200 uint32 = 115200 // default
+	UartBaudRate_300    int = 300
+	UartBaudRate_1200   int = 1200
+	UartBaudRate_4800   int = 4800
+	UartBaudRate_9600   int = 9600
+	UartBaudRate_28800  int = 19200
+	UartBaudRate_38400  int = 38400
+	UartBaudRate_57600  int = 57600
+	UartBaudRate_115200 int = 115200 // default
 )
 
 // result code constants

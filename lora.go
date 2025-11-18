@@ -26,9 +26,9 @@ func (Lora *lora) debugLog(format string, args ...interface{}) {
 }
 
 // createConnectionInternal is the internal connection creation function
-func createConnectionInternal(serialInterfaceName string, config Configuration, buffLen int, debug bool, debugName string, debugFunc func(string, string)) (Lora *lora, errEvent *ErrorEvent) {
+func createConnectionInternal(serialInterfaceName string, baudRate int, config Configuration, buffLen int, debug bool, debugName string, debugFunc func(string, string)) (Lora *lora, errEvent *ErrorEvent) {
 	mode := &serial.Mode{
-		BaudRate: 115200,
+		BaudRate: baudRate,
 		DataBits: 8,
 		Parity:   serial.NoParity,
 		StopBits: serial.OneStopBit,
@@ -62,13 +62,13 @@ func createConnectionInternal(serialInterfaceName string, config Configuration, 
 }
 
 // CreateConnection attaches to a uart serial port, and a desired buffer length and returns a lora object
-func CreateConnection(serialInterfaceName string, config Configuration, buffLen int) (Lora *lora, errEvent *ErrorEvent) {
-	return createConnectionInternal(serialInterfaceName, config, buffLen, false, "", nil)
+func CreateConnection(serialInterfaceName string, baudRate int, config Configuration, buffLen int) (Lora *lora, errEvent *ErrorEvent) {
+	return createConnectionInternal(serialInterfaceName, baudRate, config, buffLen, false, "", nil)
 }
 
 // CreateConnectionDEBUG creates a connection with debug logging enabled
-func CreateConnectionDEBUG(serialInterfaceName string, config Configuration, buffLen int, debugName string, debugFunc func(string, string)) (Lora *lora, errEvent *ErrorEvent) {
-	return createConnectionInternal(serialInterfaceName, config, buffLen, true, debugName, debugFunc)
+func CreateConnectionDEBUG(serialInterfaceName string, baudRate int, config Configuration, buffLen int, debugName string, debugFunc func(string, string)) (Lora *lora, errEvent *ErrorEvent) {
+	return createConnectionInternal(serialInterfaceName, baudRate, config, buffLen, true, debugName, debugFunc)
 }
 
 // CloseConnection closes the connection to the LoRa module
